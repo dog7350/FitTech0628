@@ -30,14 +30,12 @@ public class MemberServiceImpl implements MemberService {
 			for(int i = 0; i < arr.size(); i++ ) {
 				if (arr.get(i).getId().equals(dto.getId()))
 				{
+					System.out.println("중복된 아이디가 있습니다.");
 					flag = true;
 					break;
 				}
 			}
-			if (flag == false) {
-				System.out.println("중복된 아이디가 있습니다.");
-				arr.add(dto);
-			}
+			if (flag == false) arr.add(dto);
 			
 			System.out.println("등록그만하기 0번");
 			
