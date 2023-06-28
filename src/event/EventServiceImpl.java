@@ -1,15 +1,12 @@
 package event;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class EventServiceImpl implements EventService {
 	private static EventServiceImpl instance = null;
 	private EventServiceImpl() {}
 	public static EventServiceImpl getInstance() {
-		if (instance == null) {
-			instance = new EventServiceImpl();
-		}
+		if (instance == null) instance = new EventServiceImpl();
 		return instance;
 	}
 	
@@ -26,9 +23,7 @@ public class EventServiceImpl implements EventService {
 	public void viewAllEvent() {
 		System.out.println("모든 이벤트 보기 실행");
 		System.out.println(">>>");
-		for(int i=0; i<list.size();i++) {
-			System.out.println(list.get(i));
-		}
+		for(int i=0; i<list.size();i++) System.out.println(list.get(i));
 	}
 	
 }

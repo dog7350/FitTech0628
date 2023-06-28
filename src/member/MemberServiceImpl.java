@@ -1,25 +1,20 @@
 package member;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class MemberServiceImpl implements MemberService {
 	private static MemberServiceImpl instance = null;
 	private MemberServiceImpl() {}
 	public static MemberServiceImpl getInstance() {
-		if (instance == null) {
-			instance = new MemberServiceImpl();
-		}
+		if (instance == null) instance = new MemberServiceImpl();
 		return instance;
 	}
 	
 	Scanner sc = new Scanner(System.in);
 	
 	ArrayList<memberDTO> arr = new ArrayList<>();
-	
 	boolean bool = true;
 	
-
 	@Override
 	public void membersave() {
 		while(bool) {
@@ -46,14 +41,8 @@ public class MemberServiceImpl implements MemberService {
 			
 			System.out.println("등록그만하기 0번");
 			
-			if(sc.nextInt() == 0) {
-				bool = false;
-			}
-
-
+			if(sc.nextInt() == 0) bool = false;
 		}
-
-
 	}
 
 	@Override
@@ -61,11 +50,4 @@ public class MemberServiceImpl implements MemberService {
 		
 		System.out.println("현재 총 등록된 회원 수는 " + arr.size());
 	}
-
-	
-
-
-
-	
-
 }

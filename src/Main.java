@@ -1,19 +1,14 @@
-
-
-
 import java.util.*;
+
 import member.MemberServiceImpl;
 import event.EventServiceImpl;
-
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-
 		MemberServiceImpl member = MemberServiceImpl.getInstance();
 		EventServiceImpl event = EventServiceImpl.getInstance();
-		
 		boolean flag = true;
 		
 		while (flag) {
@@ -47,6 +42,5 @@ public class Main {
 					break;
 			}
 		}
-
 	}
 }
