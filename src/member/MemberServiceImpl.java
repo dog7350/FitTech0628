@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MemberServiceImpl implements MemberService {
+	private static MemberServiceImpl instance = null;
+	private MemberServiceImpl() {}
+	public static MemberServiceImpl getInstance() {
+		if (instance == null) {
+			instance = new MemberServiceImpl();
+		}
+		return instance;
+	}
+	
 	Scanner sc = new Scanner(System.in);
 	
 	ArrayList<memberDTO> arr = new ArrayList<>();
@@ -55,5 +64,8 @@ public class MemberServiceImpl implements MemberService {
 
 	
 
+
+
+	
 
 }
