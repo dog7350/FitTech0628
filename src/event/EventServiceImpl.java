@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EventServiceImpl implements EventService {
+	private static EventServiceImpl instance = null;
+	private EventServiceImpl() {}
+	public static EventServiceImpl getInstance() {
+		if (instance == null) {
+			instance = new EventServiceImpl();
+		}
+		return instance;
+	}
 	
 	ArrayList<String> list = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
@@ -22,7 +30,5 @@ public class EventServiceImpl implements EventService {
 			System.out.println(list.get(i));
 		}
 	}
-	public void viewEvent() {
-		System.out.println("이달의 이벤트 보기 실행");
-	}
+	
 }
